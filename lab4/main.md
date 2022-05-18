@@ -1,9 +1,9 @@
 ---
-Date: 09/03/2022
+Date: 16/03/2022
 ---
 
-**Лабораторная работа №2** \
-Метод Гаусса с выбором главного элемента
+**Лабораторная работа №4** \
+LU-разложение
 =====================================================
 ><span style="color:#474DA1">*Выполнил студент Гринёв Максим Б9119-01.03.
 02миопд*</span>. {{Date}}
@@ -15,13 +15,13 @@ Date: 09/03/2022
 
 <div style="page-break-after: always;"></div>
 
-## Метод Гаусса с выбором главного элемента
-
 !!!include(components/method.md)!!!
 
 <br>
 <br>
 <br>
+
+<div style="page-break-after: always;"></div>
 
 ## Алгоритм
 
@@ -32,7 +32,6 @@ Date: 09/03/2022
 
 <br>
 <br>
-<div style="page-break-after: always;"></div>
 
 ## Тесты
 
@@ -58,6 +57,6 @@ Date: 09/03/2022
         display:block;
         margin-left:auto;
         margin-right:auto;
-        border: 1px, solid, black;
+        border: 10px, solid, black;
     }
 </style>

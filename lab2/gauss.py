@@ -1,9 +1,10 @@
 import math
 import cmath
 from copy import copy, deepcopy
+from re import A
 import numpy as np
 
-def solveMatrixMaxEl(matrix, solution):
+def solveMatrixGaussMaxEl(A, B):
 
         def deleteRowAndCol(rowIndex, colIndex):
             poppedRow = copy(initialMatrix[rowIndex])
@@ -44,15 +45,15 @@ def solveMatrixMaxEl(matrix, solution):
                         colIndex = colJ
             return rowIndex, colIndex, maxElement
 
-        initialMatrix = deepcopy(matrix)
-        initialSol = list(copy(solution))
+        initialMatrix = deepcopy(A)
+        initialSol = list(copy(B))
         finalMatrix = []
         finalSol = []
         deletedInitialRows = []
         deletedInitialSol = []
         mList = []
         
-        for steps in range(len(matrix)):
+        for steps in range(len(A)):
             tempMList = []
             if steps != 0:
                 changeElements()
@@ -104,7 +105,7 @@ def printE(myX, pythonX):
     
 def main():
         
-    maxElM = [
+    A = [
         [0.411, 0.421, -0.333, 0.313, -0.141, -0.381, 0.245],
         [0.241, 0.705, 0.139, -0.409, 0.321, 0.0625, 0.101],
         [0.123, -0.239, 0.502, 0.901, 0.243, 0.819, 0.321],
@@ -113,16 +114,15 @@ def main():
         [0.281, 0.525, 0.719, 0.118, -0.974, 0.808, 0.923],
         [0.246, -0.301, 0.231, 0.813, -0.702, 1.223, 1.105]]
     
-    maxElSol = [0.096, 1.252, 1.024, 1.023, 1.155, 1.937, 1.673]
+    B = [0.096, 1.252, 1.024, 1.023, 1.155, 1.937, 1.673]
 
     
-    maxElRoots = solveMatrixMaxEl(maxElM, maxElSol)
-    maxElPythonRoots = numpySolution(maxElM, maxElSol)
+    my = solveMatrixGaussMaxEl(A, B)
+    numpy = numpySolution(A, B)
     
-    print(maxElRoots)
-    print(maxElPythonRoots)
-    printE(maxElRoots, maxElPythonRoots)
+    print(my)
+    print(numpy)
+    printE(my, numpy)
         
-           
 if __name__ == '__main__':
     main()
